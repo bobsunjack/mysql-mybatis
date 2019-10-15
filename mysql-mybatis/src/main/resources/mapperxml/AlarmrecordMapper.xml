@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mysql.mapper.AlarmrecordMapper">
+  <resultMap id="BaseResultMap" type="com.example.mysql.domain.Alarmrecord">
+    <!--@mbg.generated-->
+    <!--@Table alarmrecord-->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="height" jdbcType="INTEGER" property="height" />
+    <result column="width" jdbcType="INTEGER" property="width" />
+    <result column="f_time" jdbcType="INTEGER" property="fTime" />
+    <result column="pitch" jdbcType="DOUBLE" property="pitch" />
+    <result column="roll" jdbcType="DOUBLE" property="roll" />
+    <result column="yaw" jdbcType="DOUBLE" property="yaw" />
+    <result column="bottom" jdbcType="INTEGER" property="bottom" />
+    <result column="left" jdbcType="INTEGER" property="left" />
+    <result column="right" jdbcType="INTEGER" property="right" />
+    <result column="top" jdbcType="INTEGER" property="top" />
+    <result column="feature" jdbcType="LONGVARCHAR" property="feature" />
+    <result column="imgHeight" jdbcType="INTEGER" property="imgheight" />
+    <result column="imgWidth" jdbcType="INTEGER" property="imgwidth" />
+    <result column="imgMode" jdbcType="INTEGER" property="imgmode" />
+    <result column="imgUrl" jdbcType="VARCHAR" property="imgurl" />
+    <result column="qualityScore" jdbcType="DOUBLE" property="qualityscore" />
+    <result column="taskIdx" jdbcType="VARCHAR" property="taskidx" />
+    <result column="time" jdbcType="INTEGER" property="time" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="userid" jdbcType="VARCHAR" property="userid" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="beard" jdbcType="INTEGER" property="beard" />
+    <result column="emotion" jdbcType="INTEGER" property="emotion" />
+    <result column="eyeOpen" jdbcType="INTEGER" property="eyeopen" />
+    <result column="gender" jdbcType="INTEGER" property="gender" />
+    <result column="glass" jdbcType="INTEGER" property="glass" />
+    <result column="mask" jdbcType="INTEGER" property="mask" />
+    <result column="mouthOpen" jdbcType="INTEGER" property="mouthopen" />
+    <result column="race" jdbcType="INTEGER" property="race" />
+    <result column="parentId" jdbcType="VARCHAR" property="parentid" />
+    <result column="localPath" jdbcType="VARCHAR" property="localpath" />
+    <result column="virtualPath" jdbcType="VARCHAR" property="virtualpath" />
+    <result column="qtime" jdbcType="TIMESTAMP" property="qtime" />
+    <result column="similars" jdbcType="LONGVARCHAR" property="similars" />
+    <result column="imgBigurl" jdbcType="VARCHAR" property="imgbigurl" />
+    <result column="vitualBigurl" jdbcType="VARCHAR" property="vitualbigurl" />
+    <result column="pictureServerId" jdbcType="VARCHAR" property="pictureserverid" />
+    <result column="channelId" jdbcType="VARCHAR" property="channelid" />
+    <result column="score" jdbcType="DOUBLE" property="score" />
+    <result column="taskName" jdbcType="VARCHAR" property="taskname" />
+    <result column="userName" jdbcType="VARCHAR" property="username" />
+    <result column="identityCard" jdbcType="VARCHAR" property="identitycard" />
+    <result column="nation" jdbcType="VARCHAR" property="nation" />
+    <result column="nativePlace" jdbcType="VARCHAR" property="nativeplace" />
+    <result column="taskId" jdbcType="VARCHAR" property="taskid" />
+    <result column="frameIndex" jdbcType="BIGINT" property="frameindex" />
+    <result column="orgId" jdbcType="VARCHAR" property="orgid" />
+    <result column="orgIdPath" jdbcType="VARCHAR" property="orgidpath" />
+    <result column="orgName" jdbcType="VARCHAR" property="orgname" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, height, width, f_time, pitch, roll, yaw, bottom, `left`, `right`, `top`, feature, 
+    imgHeight, imgWidth, imgMode, imgUrl, qualityScore, taskIdx, `time`, `type`, userid, 
+    `state`, age, beard, emotion, eyeOpen, gender, glass, mask, mouthOpen, race, parentId, 
+    localPath, virtualPath, qtime, similars, imgBigurl, vitualBigurl, pictureServerId, 
+    channelId, score, taskName, userName, identityCard, nation, nativePlace, taskId, 
+    frameIndex, orgId, orgIdPath, orgName
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from alarmrecord
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from alarmrecord
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.mysql.domain.Alarmrecord" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into alarmrecord (height, width, f_time, 
+      pitch, roll, yaw, bottom, 
+      `left`, `right`, `top`, feature, 
+      imgHeight, imgWidth, imgMode, 
+      imgUrl, qualityScore, taskIdx, 
+      `time`, `type`, userid, 
+      `state`, age, beard, 
+      emotion, eyeOpen, gender, 
+      glass, mask, mouthOpen, 
+      race, parentId, localPath, 
+      virtualPath, qtime, similars, 
+      imgBigurl, vitualBigurl, pictureServerId, 
+      channelId, score, taskName, 
+      userName, identityCard, nation, 
+      nativePlace, taskId, frameIndex, 
+      orgId, orgIdPath, orgName
+      )
+    values (#{height,jdbcType=INTEGER}, #{width,jdbcType=INTEGER}, #{fTime,jdbcType=INTEGER}, 
+      #{pitch,jdbcType=DOUBLE}, #{roll,jdbcType=DOUBLE}, #{yaw,jdbcType=DOUBLE}, #{bottom,jdbcType=INTEGER}, 
+      #{left,jdbcType=INTEGER}, #{right,jdbcType=INTEGER}, #{top,jdbcType=INTEGER}, #{feature,jdbcType=LONGVARCHAR}, 
+      #{imgheight,jdbcType=INTEGER}, #{imgwidth,jdbcType=INTEGER}, #{imgmode,jdbcType=INTEGER}, 
+      #{imgurl,jdbcType=VARCHAR}, #{qualityscore,jdbcType=DOUBLE}, #{taskidx,jdbcType=VARCHAR}, 
+      #{time,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{userid,jdbcType=VARCHAR}, 
+      #{state,jdbcType=INTEGER}, #{age,jdbcType=INTEGER}, #{beard,jdbcType=INTEGER}, 
+      #{emotion,jdbcType=INTEGER}, #{eyeopen,jdbcType=INTEGER}, #{gender,jdbcType=INTEGER}, 
+      #{glass,jdbcType=INTEGER}, #{mask,jdbcType=INTEGER}, #{mouthopen,jdbcType=INTEGER}, 
+      #{race,jdbcType=INTEGER}, #{parentid,jdbcType=VARCHAR}, #{localpath,jdbcType=VARCHAR}, 
+      #{virtualpath,jdbcType=VARCHAR}, #{qtime,jdbcType=TIMESTAMP}, #{similars,jdbcType=LONGVARCHAR}, 
+      #{imgbigurl,jdbcType=VARCHAR}, #{vitualbigurl,jdbcType=VARCHAR}, #{pictureserverid,jdbcType=VARCHAR}, 
+      #{channelid,jdbcType=VARCHAR}, #{score,jdbcType=DOUBLE}, #{taskname,jdbcType=VARCHAR}, 
+      #{username,jdbcType=VARCHAR}, #{identitycard,jdbcType=VARCHAR}, #{nation,jdbcType=VARCHAR}, 
+      #{nativeplace,jdbcType=VARCHAR}, #{taskid,jdbcType=VARCHAR}, #{frameindex,jdbcType=BIGINT}, 
+      #{orgid,jdbcType=VARCHAR}, #{orgidpath,jdbcType=VARCHAR}, #{orgname,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.example.mysql.domain.Alarmrecord" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into alarmrecord
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="height != null">
+        height,
+      </if>
+      <if test="width != null">
+        width,
+      </if>
+      <if test="fTime != null">
+        f_time,
+      </if>
+      <if test="pitch != null">
+        pitch,
+      </if>
+      <if test="roll != null">
+        roll,
+      </if>
+      <if test="yaw != null">
+        yaw,
+      </if>
+      <if test="bottom != null">
+        bottom,
+      </if>
+      <if test="left != null">
+        `left`,
+      </if>
+      <if test="right != null">
+        `right`,
+      </if>
+      <if test="top != null">
+        `top`,
+      </if>
+      <if test="feature != null">
+        feature,
+      </if>
+      <if test="imgheight != null">
+        imgHeight,
+      </if>
+      <if test="imgwidth != null">
+        imgWidth,
+      </if>
+      <if test="imgmode != null">
+        imgMode,
+      </if>
+      <if test="imgurl != null">
+        imgUrl,
+      </if>
+      <if test="qualityscore != null">
+        qualityScore,
+      </if>
+      <if test="taskidx != null">
+        taskIdx,
+      </if>
+      <if test="time != null">
+        `time`,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="state != null">
+        `state`,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="beard != null">
+        beard,
+      </if>
+      <if test="emotion != null">
+        emotion,
+      </if>
+      <if test="eyeopen != null">
+        eyeOpen,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="glass != null">
+        glass,
+      </if>
+      <if test="mask != null">
+        mask,
+      </if>
+      <if test="mouthopen != null">
+        mouthOpen,
+      </if>
+      <if test="race != null">
+        race,
+      </if>
+      <if test="parentid != null">
+        parentId,
+      </if>
+      <if test="localpath != null">
+        localPath,
+      </if>
+      <if test="virtualpath != null">
+        virtualPath,
+      </if>
+      <if test="qtime != null">
+        qtime,
+      </if>
+      <if test="similars != null">
+        similars,
+      </if>
+      <if test="imgbigurl != null">
+        imgBigurl,
+      </if>
+      <if test="vitualbigurl != null">
+        vitualBigurl,
+      </if>
+      <if test="pictureserverid != null">
+        pictureServerId,
+      </if>
+      <if test="channelid != null">
+        channelId,
+      </if>
+      <if test="score != null">
+        score,
+      </if>
+      <if test="taskname != null">
+        taskName,
+      </if>
+      <if test="username != null">
+        userName,
+      </if>
+      <if test="identitycard != null">
+        identityCard,
+      </if>
+      <if test="nation != null">
+        nation,
+      </if>
+      <if test="nativeplace != null">
+        nativePlace,
+      </if>
+      <if test="taskid != null">
+        taskId,
+      </if>
+      <if test="frameindex != null">
+        frameIndex,
+      </if>
+      <if test="orgid != null">
+        orgId,
+      </if>
+      <if test="orgidpath != null">
+        orgIdPath,
+      </if>
+      <if test="orgname != null">
+        orgName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="height != null">
+        #{height,jdbcType=INTEGER},
+      </if>
+      <if test="width != null">
+        #{width,jdbcType=INTEGER},
+      </if>
+      <if test="fTime != null">
+        #{fTime,jdbcType=INTEGER},
+      </if>
+      <if test="pitch != null">
+        #{pitch,jdbcType=DOUBLE},
+      </if>
+      <if test="roll != null">
+        #{roll,jdbcType=DOUBLE},
+      </if>
+      <if test="yaw != null">
+        #{yaw,jdbcType=DOUBLE},
+      </if>
+      <if test="bottom != null">
+        #{bottom,jdbcType=INTEGER},
+      </if>
+      <if test="left != null">
+        #{left,jdbcType=INTEGER},
+      </if>
+      <if test="right != null">
+        #{right,jdbcType=INTEGER},
+      </if>
+      <if test="top != null">
+        #{top,jdbcType=INTEGER},
+      </if>
+      <if test="feature != null">
+        #{feature,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="imgheight != null">
+        #{imgheight,jdbcType=INTEGER},
+      </if>
+      <if test="imgwidth != null">
+        #{imgwidth,jdbcType=INTEGER},
+      </if>
+      <if test="imgmode != null">
+        #{imgmode,jdbcType=INTEGER},
+      </if>
+      <if test="imgurl != null">
+        #{imgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="qualityscore != null">
+        #{qualityscore,jdbcType=DOUBLE},
+      </if>
+      <if test="taskidx != null">
+        #{taskidx,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="beard != null">
+        #{beard,jdbcType=INTEGER},
+      </if>
+      <if test="emotion != null">
+        #{emotion,jdbcType=INTEGER},
+      </if>
+      <if test="eyeopen != null">
+        #{eyeopen,jdbcType=INTEGER},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="glass != null">
+        #{glass,jdbcType=INTEGER},
+      </if>
+      <if test="mask != null">
+        #{mask,jdbcType=INTEGER},
+      </if>
+      <if test="mouthopen != null">
+        #{mouthopen,jdbcType=INTEGER},
+      </if>
+      <if test="race != null">
+        #{race,jdbcType=INTEGER},
+      </if>
+      <if test="parentid != null">
+        #{parentid,jdbcType=VARCHAR},
+      </if>
+      <if test="localpath != null">
+        #{localpath,jdbcType=VARCHAR},
+      </if>
+      <if test="virtualpath != null">
+        #{virtualpath,jdbcType=VARCHAR},
+      </if>
+      <if test="qtime != null">
+        #{qtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="similars != null">
+        #{similars,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="imgbigurl != null">
+        #{imgbigurl,jdbcType=VARCHAR},
+      </if>
+      <if test="vitualbigurl != null">
+        #{vitualbigurl,jdbcType=VARCHAR},
+      </if>
+      <if test="pictureserverid != null">
+        #{pictureserverid,jdbcType=VARCHAR},
+      </if>
+      <if test="channelid != null">
+        #{channelid,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null">
+        #{score,jdbcType=DOUBLE},
+      </if>
+      <if test="taskname != null">
+        #{taskname,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="identitycard != null">
+        #{identitycard,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null">
+        #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="nativeplace != null">
+        #{nativeplace,jdbcType=VARCHAR},
+      </if>
+      <if test="taskid != null">
+        #{taskid,jdbcType=VARCHAR},
+      </if>
+      <if test="frameindex != null">
+        #{frameindex,jdbcType=BIGINT},
+      </if>
+      <if test="orgid != null">
+        #{orgid,jdbcType=VARCHAR},
+      </if>
+      <if test="orgidpath != null">
+        #{orgidpath,jdbcType=VARCHAR},
+      </if>
+      <if test="orgname != null">
+        #{orgname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.mysql.domain.Alarmrecord">
+    <!--@mbg.generated-->
+    update alarmrecord
+    <set>
+      <if test="height != null">
+        height = #{height,jdbcType=INTEGER},
+      </if>
+      <if test="width != null">
+        width = #{width,jdbcType=INTEGER},
+      </if>
+      <if test="fTime != null">
+        f_time = #{fTime,jdbcType=INTEGER},
+      </if>
+      <if test="pitch != null">
+        pitch = #{pitch,jdbcType=DOUBLE},
+      </if>
+      <if test="roll != null">
+        roll = #{roll,jdbcType=DOUBLE},
+      </if>
+      <if test="yaw != null">
+        yaw = #{yaw,jdbcType=DOUBLE},
+      </if>
+      <if test="bottom != null">
+        bottom = #{bottom,jdbcType=INTEGER},
+      </if>
+      <if test="left != null">
+        `left` = #{left,jdbcType=INTEGER},
+      </if>
+      <if test="right != null">
+        `right` = #{right,jdbcType=INTEGER},
+      </if>
+      <if test="top != null">
+        `top` = #{top,jdbcType=INTEGER},
+      </if>
+      <if test="feature != null">
+        feature = #{feature,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="imgheight != null">
+        imgHeight = #{imgheight,jdbcType=INTEGER},
+      </if>
+      <if test="imgwidth != null">
+        imgWidth = #{imgwidth,jdbcType=INTEGER},
+      </if>
+      <if test="imgmode != null">
+        imgMode = #{imgmode,jdbcType=INTEGER},
+      </if>
+      <if test="imgurl != null">
+        imgUrl = #{imgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="qualityscore != null">
+        qualityScore = #{qualityscore,jdbcType=DOUBLE},
+      </if>
+      <if test="taskidx != null">
+        taskIdx = #{taskidx,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        `time` = #{time,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        `type` = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        `state` = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="age != null">
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="beard != null">
+        beard = #{beard,jdbcType=INTEGER},
+      </if>
+      <if test="emotion != null">
+        emotion = #{emotion,jdbcType=INTEGER},
+      </if>
+      <if test="eyeopen != null">
+        eyeOpen = #{eyeopen,jdbcType=INTEGER},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="glass != null">
+        glass = #{glass,jdbcType=INTEGER},
+      </if>
+      <if test="mask != null">
+        mask = #{mask,jdbcType=INTEGER},
+      </if>
+      <if test="mouthopen != null">
+        mouthOpen = #{mouthopen,jdbcType=INTEGER},
+      </if>
+      <if test="race != null">
+        race = #{race,jdbcType=INTEGER},
+      </if>
+      <if test="parentid != null">
+        parentId = #{parentid,jdbcType=VARCHAR},
+      </if>
+      <if test="localpath != null">
+        localPath = #{localpath,jdbcType=VARCHAR},
+      </if>
+      <if test="virtualpath != null">
+        virtualPath = #{virtualpath,jdbcType=VARCHAR},
+      </if>
+      <if test="qtime != null">
+        qtime = #{qtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="similars != null">
+        similars = #{similars,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="imgbigurl != null">
+        imgBigurl = #{imgbigurl,jdbcType=VARCHAR},
+      </if>
+      <if test="vitualbigurl != null">
+        vitualBigurl = #{vitualbigurl,jdbcType=VARCHAR},
+      </if>
+      <if test="pictureserverid != null">
+        pictureServerId = #{pictureserverid,jdbcType=VARCHAR},
+      </if>
+      <if test="channelid != null">
+        channelId = #{channelid,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null">
+        score = #{score,jdbcType=DOUBLE},
+      </if>
+      <if test="taskname != null">
+        taskName = #{taskname,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        userName = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="identitycard != null">
+        identityCard = #{identitycard,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null">
+        nation = #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="nativeplace != null">
+        nativePlace = #{nativeplace,jdbcType=VARCHAR},
+      </if>
+      <if test="taskid != null">
+        taskId = #{taskid,jdbcType=VARCHAR},
+      </if>
+      <if test="frameindex != null">
+        frameIndex = #{frameindex,jdbcType=BIGINT},
+      </if>
+      <if test="orgid != null">
+        orgId = #{orgid,jdbcType=VARCHAR},
+      </if>
+      <if test="orgidpath != null">
+        orgIdPath = #{orgidpath,jdbcType=VARCHAR},
+      </if>
+      <if test="orgname != null">
+        orgName = #{orgname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.mysql.domain.Alarmrecord">
+    <!--@mbg.generated-->
+    update alarmrecord
+    set height = #{height,jdbcType=INTEGER},
+      width = #{width,jdbcType=INTEGER},
+      f_time = #{fTime,jdbcType=INTEGER},
+      pitch = #{pitch,jdbcType=DOUBLE},
+      roll = #{roll,jdbcType=DOUBLE},
+      yaw = #{yaw,jdbcType=DOUBLE},
+      bottom = #{bottom,jdbcType=INTEGER},
+      `left` = #{left,jdbcType=INTEGER},
+      `right` = #{right,jdbcType=INTEGER},
+      `top` = #{top,jdbcType=INTEGER},
+      feature = #{feature,jdbcType=LONGVARCHAR},
+      imgHeight = #{imgheight,jdbcType=INTEGER},
+      imgWidth = #{imgwidth,jdbcType=INTEGER},
+      imgMode = #{imgmode,jdbcType=INTEGER},
+      imgUrl = #{imgurl,jdbcType=VARCHAR},
+      qualityScore = #{qualityscore,jdbcType=DOUBLE},
+      taskIdx = #{taskidx,jdbcType=VARCHAR},
+      `time` = #{time,jdbcType=INTEGER},
+      `type` = #{type,jdbcType=INTEGER},
+      userid = #{userid,jdbcType=VARCHAR},
+      `state` = #{state,jdbcType=INTEGER},
+      age = #{age,jdbcType=INTEGER},
+      beard = #{beard,jdbcType=INTEGER},
+      emotion = #{emotion,jdbcType=INTEGER},
+      eyeOpen = #{eyeopen,jdbcType=INTEGER},
+      gender = #{gender,jdbcType=INTEGER},
+      glass = #{glass,jdbcType=INTEGER},
+      mask = #{mask,jdbcType=INTEGER},
+      mouthOpen = #{mouthopen,jdbcType=INTEGER},
+      race = #{race,jdbcType=INTEGER},
+      parentId = #{parentid,jdbcType=VARCHAR},
+      localPath = #{localpath,jdbcType=VARCHAR},
+      virtualPath = #{virtualpath,jdbcType=VARCHAR},
+      qtime = #{qtime,jdbcType=TIMESTAMP},
+      similars = #{similars,jdbcType=LONGVARCHAR},
+      imgBigurl = #{imgbigurl,jdbcType=VARCHAR},
+      vitualBigurl = #{vitualbigurl,jdbcType=VARCHAR},
+      pictureServerId = #{pictureserverid,jdbcType=VARCHAR},
+      channelId = #{channelid,jdbcType=VARCHAR},
+      score = #{score,jdbcType=DOUBLE},
+      taskName = #{taskname,jdbcType=VARCHAR},
+      userName = #{username,jdbcType=VARCHAR},
+      identityCard = #{identitycard,jdbcType=VARCHAR},
+      nation = #{nation,jdbcType=VARCHAR},
+      nativePlace = #{nativeplace,jdbcType=VARCHAR},
+      taskId = #{taskid,jdbcType=VARCHAR},
+      frameIndex = #{frameindex,jdbcType=BIGINT},
+      orgId = #{orgid,jdbcType=VARCHAR},
+      orgIdPath = #{orgidpath,jdbcType=VARCHAR},
+      orgName = #{orgname,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
